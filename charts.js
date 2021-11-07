@@ -65,20 +65,29 @@ function buildCharts(sample) {
     var sampleOne = sampleArray[0];
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-    var otuIDs = sampleOne.otu_ids;
+    
+    // make otu_ids into strings instead of integer 
+    var otuIDs = sampleOne.otu_ids.map(function(x){
+      return `ID ${x}`;
+    });
+
     var otuLabels = sampleOne.otu_labels;
     var sampleValues = sampleOne.sample_values;
+
+    
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    var yticks = otuIDs.slice(0,10);
+    var yticks = otuIDs.slice(0,10).reverse();
+    
 
     // 8. Create the trace for the bar chart. 
     var trace = {
-      x: sampleValues.slice(0,10),
+      x: sampleValues.slice(0,10).reverse(),
       y: yticks,
+      text: otuLabels.slice(0,10).reverse(),
       type: 'bar',
       orientation: 'h'
     };
@@ -86,10 +95,11 @@ function buildCharts(sample) {
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-     title: '10 Most Common Bacteria Species'
+     title: '10 Most Common Belly Button Bacteria Species'
     };
 
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot('chart', data, barLayout);
+    Plotly.newPlot('plot', barData, barLayout);
   });
 }
+
