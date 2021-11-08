@@ -123,6 +123,8 @@ function buildCharts(sample) {
       xaxis: {
         title: 'OTU ID'
         },
+      height:500,
+      width:1200,
       margin: {
         l:130,
         r:130,
@@ -147,7 +149,7 @@ function buildCharts(sample) {
 
   // 4. Create the trace for the gauge chart.
   var gaugeData = [{
-    title: {text: 'Belly Button Washing Frequency'},
+    title: {text: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week"},
     //title:{text: 'Scrubs per Week', font: {size: 15}},
     domain: {x: [0,1], y:[0,1]},
     value: washFreq,
@@ -162,8 +164,8 @@ function buildCharts(sample) {
         { range: [0, 2], color: 'red'},
         { range: [2,4], color: 'orange'},
         { range: [4,6], color: 'yellow'},
-        { range: [6,8], color: 'green'},
-        { range: [8,10], color: 'blue'}
+        { range: [6,8], color: 'lightgreen'},
+        { range: [8,10], color: 'green'}
       ],
     }
   }];
@@ -171,7 +173,7 @@ function buildCharts(sample) {
   var gaugeLayout = {
     width: 400,
     height: 400,
-    margin: { t: 20, r: 25, l: 25, b: 20 },
+    margin: { t: 40, b: 0, r: 25, l: 25},
   };
 
   // 6. Use Plotly to plot the gauge data and layout.
