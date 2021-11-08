@@ -9,13 +9,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="background-color:lightblue">
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
+      <div class="col-md-12 col-xs-12 jumbotron text-center">
         <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+        <p>
+          Use the interactive charts below to explore the dataset
+          <br>
+          <br>The demographic information and charts represent data
+          from an individual subject
+          <br>On the left side, you can select the subject ID number 
+          in order to see data from a specified subject
+        </p>
       </div>
     </div>
     <div class="row">
@@ -33,14 +40,35 @@
       </div>
       <div class="col-md-5">
         <div id="bar"></div>
+        <p>
+          This bar graph shows what the ten most common 
+          bacteria species are in a subject's belly button.
+          The bars represent the size of the bacteria culture
+          per species found in the sample. Each species is 
+          labeled with a unique OTU ID. Hover over the bars
+          to see the culture exact size and bacteria species.
+        </p>
       </div>
       <div class="col-md-5">
         <div id="gauge"></div>
+        <p>
+          This gauge shows how frequently subjects
+          wash their belly buttons.
+        </p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-15 col-sx-5">
         <div id="bubble"></div>
+        <p>
+          This bubble chart visualizes the quantity
+          of each bacteria species found in the subject's
+          belly button. Each species is represented by a
+          different color. Bubble sizes vary depending on the
+          size of each bacteria culture within the sample.
+          Hover over each bubble to see the exact OTU ID, 
+          culture size, and bacteria species.
+        </p>
       </div>
     </div>
   </div>
